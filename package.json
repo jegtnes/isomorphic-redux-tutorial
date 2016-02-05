@@ -15,5 +15,27 @@
   "bugs": {
     "url": "https://github.com/jegtnes/isomorphic-redux-tutorial/issues"
   },
-  "homepage": "https://github.com/jegtnes/isomorphic-redux-tutorial#readme"
+  "homepage": "https://github.com/jegtnes/isomorphic-redux-tutorial#readme",
+  "dependencies": {
+    "axios": "^0.9.1",
+    "express": "^4.13.4",
+    "history": "^1.1.17",
+    "immutable": "^3.7.6",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.3.0",
+    "react-router": "^1.0.3",
+    "redux": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel": "^6.3.26",
+    "babel-eslint": "^4.1.8",
+    "babel-loader": "^6.2.2",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.16.1",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
