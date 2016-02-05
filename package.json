@@ -4,7 +4,10 @@
   "description": "Ignore me. Trying out this thing: https://medium.com/front-end-developers/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_PATH=$NODE_PATH:./shared node --harmony .",
+    "dev": "npm run start & webpack-dev-server --progress --color",
+    "build": "NODE_ENV=production webpack --progress --color -p --config webpack.prod.config.js"
   },
   "repository": {
     "type": "git",
