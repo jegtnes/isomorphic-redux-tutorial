@@ -1,0 +1,19 @@
+{
+  "name": "isomorphic-redux-tutorial",
+  "version": "1.0.0",
+  "description": "Ignore me. Trying out this thing: https://medium.com/front-end-developers/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jegtnes/isomorphic-redux-tutorial.git"
+  },
+  "author": "Alex Jegtnes <alex@jegtnes.co.uk> (http://jegtnes.co.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jegtnes/isomorphic-redux-tutorial/issues"
+  },
+  "homepage": "https://github.com/jegtnes/isomorphic-redux-tutorial#readme"
+}
