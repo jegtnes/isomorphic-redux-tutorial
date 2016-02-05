@@ -4,8 +4,8 @@ var webpack = require('webpack');
 module.exports = {
   entry:  [
     'webpack-dev-server/client?http://127.0.0.1:8080/',
-    'webpack/hot/only-dev-server',
-    './client'
+    'webpack/hot/only-dev-server'//,
+    //'./client'
   ],
   output: {
     path:     path.join(__dirname, 'dist'),

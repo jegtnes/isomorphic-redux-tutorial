@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_PATH=$NODE_PATH:./shared node --harmony .",
+    "start": "./node_modules/babel-cli/bin/babel-node.js index.js",
     "dev": "npm run start & webpack-dev-server --progress --color",
     "build": "NODE_ENV=production webpack --progress --color -p --config webpack.prod.config.js"
   },
@@ -21,6 +21,9 @@
   "homepage": "https://github.com/jegtnes/isomorphic-redux-tutorial#readme",
   "dependencies": {
     "axios": "^0.9.1",
+    "babel-plugin-transform-class-properties": "^6.4.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "express": "^4.13.4",
     "history": "^1.1.17",
     "immutable": "^3.7.6",
@@ -33,12 +36,29 @@
   },
   "devDependencies": {
     "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.0.0",
     "babel-eslint": "^4.1.8",
     "babel-loader": "^6.2.2",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.16.1",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-decorators-legacy",
+      "transform-class-properties",
+      "transform-object-rest-spread"
+    ]
   }
 }
