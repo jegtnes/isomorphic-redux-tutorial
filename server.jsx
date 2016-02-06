@@ -1,12 +1,12 @@
-import express                 from 'express';
-import React                   from 'react';
-import {renderToString}        from 'react-dom/server';
-import {RoutingContext, match} from 'react-router';
-import createLocation          from 'history/lib/createLocation';
-import routes                  from './shared/routes';
-
+import express                        from 'express';
+import React                          from 'react';
+import {renderToString}               from 'react-dom/server';
+import {RoutingContext, match}        from 'react-router';
+import createLocation                 from 'history/lib/createLocation';
 import {createStore, combineReducers} from 'redux';
 import { Provider }                   from 'react-redux';
+
+import routes                         from './shared/routes';
 import * as reducers                  from './shared/reducers'
 
 const app = express();
