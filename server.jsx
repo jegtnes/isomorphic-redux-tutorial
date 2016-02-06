@@ -5,10 +5,17 @@ import {RoutingContext, match} from 'react-router';
 import createLocation          from 'history/lib/createLocation';
 import routes                  from './shared/routes';
 
+import {createStore, combineReducers} from 'redux';
+import { Provider }                   from 'react-redux';
+import * as reducers                  from './shared/reducers'
+
 const app = express();
 
 app.use((req, res) => {
   const location = createLocation(req.url);
+  const reducer  = combineReducers(reducers);
+  const store    = createStore(reducer);
+
   match({routes, location}, (err, redirectLocation, renderProps) => {
     if (err) {
       console.error(err);
@@ -20,8 +27,12 @@ app.use((req, res) => {
     }
 
     const initialComponent = (
-      <RoutingContext {...renderProps} />
+      <Provider store={store}>
+        <RoutingContext {...renderProps} />
+      </Provider>
     );
+
+    const initialState = store.getState();
 
     const componentHTML = renderToString(initialComponent)
 
@@ -34,6 +45,11 @@ app.use((req, res) => {
       </head>
       <body>
         <div id="react-view">${componentHTML}</div>
+
+        <!-- Send initial Redux state over the wire-->
+        <script type="application/javascript">
+          window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
+        </script>
         <script type="application/javascript" src="/bundle.js"></script>
       </body>
     </html>
